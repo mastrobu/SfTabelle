@@ -23,8 +23,9 @@ using Windows.UI.Xaml.Navigation;
 namespace SfCreaTabellaNestedWord
 {
     /// <summary>
-    /// You can create a nested table by adding a new table into a cell. 
-    /// The following code example illustrates how to add a table into a cell.
+    /// Puoi creare una nested table aggiungendo una nuova tabella dentro una
+    /// cella. 
+    /// Il codice che segue illustra come aggiungere una tabella ad una cella.
     /// </summary>
     public sealed partial class MainPage : Page
     {
@@ -36,8 +37,7 @@ namespace SfCreaTabellaNestedWord
 
         private async void CreaTabellaNestedWordAsync()
         {
-            //Creates an instance of WordDocument class
-
+            //Crea una istanza della classe WordDocument
             WordDocument document = new WordDocument();
 
             IWSection section = document.AddSection();
@@ -54,52 +54,40 @@ namespace SfCreaTabellaNestedWord
 
             table[1, 0].AddParagraph().AppendText("Items with same price");
 
-            //Adds a nested table into the cell (second row, first cell).
-
+            //Aggiunge una nested table alla cella (seconda riga, prima cella).
             IWTable nestTable = table[1, 0].AddTable();
 
-            //Creates the specified number of rows and columns to nested table
-
+            //Crea il numero specificato di righe e colonne per la nested table
             nestTable.ResetCells(3, 1);
 
-            //Accessess the instance of the nested table cell (first row, first cell)
-
+            //Accede all'istanza della cella della nested table (prima riga, prima cella)
             WTableCell nestedCell = nestTable.Rows[0].Cells[0];
 
-            //Specifies the width of the nested cell
-
+            //Specifica la larghezza della nested cell
             nestedCell.Width = 200;
 
-            //Adds the content into nested cell
-
+            //Aggiunge il contenuto alla nested cell
             nestedCell.AddParagraph().AppendText("Apple");
 
-            //Accessess the instance of the nested table cell (second row, first cell)
-
+            //Accede all'istanza della cella della nested table (seconda riga, prima cella)
             nestedCell = nestTable.Rows[1].Cells[0];
 
-            //Specifies the width of the nested cell
-
+            //Specifica la larghezza della nested cell
             nestedCell.Width = 200;
 
-            //Adds the content into nested cell
-
+            //Aggiunge il contenuto alla nested cell
             nestedCell.AddParagraph().AppendText("Orange");
 
-            //Accessess the instance of the nested table cell (third row, first cell)
-
+            //Accede all'istanza della cella della nested table (terza riga, prima cella)
             nestedCell = nestTable.Rows[2].Cells[0];
 
-            //Specifies the width of the nested cell
-
+            //Specifica la larghezza della nested cell
             nestedCell.Width = 200;
 
-            //Adds the content into nested cell
-
+            //Aggiunge il contenuto alla nested cell
             nestedCell.AddParagraph().AppendText("Mango");
 
-            //Accessess the instance of the cell (second row, second cell)
-
+            //Accede all'istanza della cella della nested table (seconda riga, seconda cella)
             nestedCell = table.Rows[1].Cells[1];
 
             table[1, 1].AddParagraph().AppendText("85");
