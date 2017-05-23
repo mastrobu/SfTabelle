@@ -23,8 +23,8 @@ using Windows.UI.Xaml.Navigation;
 namespace SfFormattaTabellaWord
 {
     /// <summary>
-    /// The following code example illustrates how to load an existing document 
-    /// and apply table formatting options such as Borders, LeftIndent, Paddings, 
+    /// Il seguente esempio di codice illustra come caricare un documento esistente 
+    /// e applicare opzioni di formattazione tabella quali Borders, LeftIndent, Paddings, 
     /// IsAutoResize, etc.
     /// </summary>
     public sealed partial class MainPage : Page
@@ -37,11 +37,10 @@ namespace SfFormattaTabellaWord
 
         private async void FormattaTabellaWordAsync()
         {
-            //Creates an instance of WordDocument class (Empty Word Document)
-
+            //Crea una istanza della classe WordDocument (un documento Word vuoto)
             WordDocument document = new WordDocument();
 
-            //Opens an existing Word document into DocIO instance
+            //Apre un documento word esistente nella istanza DocIO
             //document.Open("Table.docx", FormatType.Docx);
             StorageFolder local = Windows.Storage.ApplicationData.Current.LocalFolder;
             StorageFile storageFile = await local.GetFileAsync("Table.docx");
