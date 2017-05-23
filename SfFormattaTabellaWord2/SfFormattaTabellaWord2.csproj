@@ -131,6 +131,11 @@
       <Version>5.2.3</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Syncfusion.DocIO.UWP">
+      <HintPath>..\SfCreaTabellaDinamicaWord\SfCreaTabellaDinamicaWord\bin\x86\Debug\Syncfusion.DocIO.UWP.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
