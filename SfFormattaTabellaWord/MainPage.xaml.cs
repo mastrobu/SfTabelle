@@ -43,7 +43,19 @@ namespace SfFormattaTabellaWord
 
             //Opens an existing Word document into DocIO instance
 
-            document.Open("Table.docx", FormatType.Docx);
+            StorageFolder local = Windows.Storage.ApplicationData.Current.LocalFolder;
+            StorageFile storageFile = await local.GetFileAsync("Table.docx");
+            var streamFile = await storageFile.OpenStreamForReadAsync();
+            document.Open(streamFile, FormatType.Docx);
+
+
+
+
+
+
+
+
+            //document.Open("Table.docx", FormatType.Docx);
 
             //Accessess the instance of the first section in the Word document
 
