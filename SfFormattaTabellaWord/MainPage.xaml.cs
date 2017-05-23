@@ -42,95 +42,67 @@ namespace SfFormattaTabellaWord
             WordDocument document = new WordDocument();
 
             //Opens an existing Word document into DocIO instance
-
+            //document.Open("Table.docx", FormatType.Docx);
             StorageFolder local = Windows.Storage.ApplicationData.Current.LocalFolder;
             StorageFile storageFile = await local.GetFileAsync("Table.docx");
             var streamFile = await storageFile.OpenStreamForReadAsync();
             document.Open(streamFile, FormatType.Docx);
 
-
-
-
-
-
-
-
-            //document.Open("Table.docx", FormatType.Docx);
-
-            //Accessess the instance of the first section in the Word document
-
+            //Accede all'istanza della prima section del documento Word
             WSection section = document.Sections[0];
 
-            //Accessess the instance of the first table in the section
-
+            //Accede all'istanza della prima tabella nella section
             WTable table = section.Tables[0] as WTable;
 
-            //Specifies the title for the table
-
+            //Specifica il titolo della tabella
             table.Title = "PriceDetails";
 
-            //Specifies the description of the table
-
+            //Specifica la descrizione della tabella
             table.Description = "This table shows the price details of various fruits";
 
-            //Specifies the left indent of the table
-
+            //Specifica l'indentazione della tabella
             table.IndentFromLeft = 50;
 
-            //Specifies the background color of the table
-
+            //Specifica il colore di background della tabella
             table.TableFormat.BackColor = Color.FromArgb(192, 192, 192);
 
-            //Specifies the horizontal alignment of the table
-
+            //Specifica l'allineamento orizzontale della tabella
             table.TableFormat.HorizontalAlignment = RowAlignment.Left;
 
-            //Specifies the left, right, top and bottom padding of all the cells in the table
-
+            //Specifica il padding left, right, top and bottom di tutte le celle della tabella
             table.TableFormat.Paddings.All = 10;
 
-            //Specifies the auto resize of table to automatically resize all cell width based on its content
-
+            //Specifica l'auto resize della tabella per ridimensionare automaticamente tutte le celle sulla base del loro contenuto
             table.TableFormat.IsAutoResized = true;
 
-            //Specifies the table top, bottom, left and right border line width
-
+            //Specifica la dimensione riga del border top, bottom, left and right della tabella
             table.TableFormat.Borders.LineWidth = 2f;
 
-            //Specifies the table horizontal border line width
-
+            //Specifica la dimensione riga del border orizzontale
             table.TableFormat.Borders.Horizontal.LineWidth = 2f;
 
-            //Specifies the table vertical border line width
-
+            //Specifica la dimensione riga del border verticale
             table.TableFormat.Borders.Vertical.LineWidth = 2f;
 
-            //Specifies the tables top, bottom, left and right border color
-
+            //Specifica il top, bottom, left and right border color delle tabelle
             table.TableFormat.Borders.Color = Color.Red;
 
-            //Specifies the table Horizontal border color
-
+            //Specifica il border color orizzontale della tabella
             table.TableFormat.Borders.Horizontal.Color = Color.Red;
 
-            //Specifies the table vertical border color
-
+            //Specifica il border color vericale della tabella
             table.TableFormat.Borders.Vertical.Color = Color.Red;
 
-            //Specifies the table borders border type
-
+            //Specifica il tipo di border della tabella
             table.TableFormat.Borders.BorderType = BorderStyle.Double;
 
-            //Accessess the instance of the first row in the table
-
+            //Accede all'istanza della prima riga della tabella
             WTableRow row = table.Rows[0];
 
-            //Specifies the row height
-
+            //Specifica l'altezza della riga
             row.Height = 20;
 
-            //Specifies the row height type
-
+            //Specifica il tipo di altezza della riga
             row.HeightType = TableRowHeightType.AtLeast;
 
             //Salva il documento su memory stream
