@@ -45,7 +45,7 @@ namespace SfStileTabellaWord
 
         private async void StileTabellaWordAsync()
         {
-            //Creates an instance of WordDocument class
+            //Crea una istana della classe WordDocument
             WordDocument document = new WordDocument();
 
             //Apre un documento word esistente nella istanza DocIO
@@ -67,12 +67,10 @@ namespace SfStileTabellaWord
 
             WTable table = section.Tables[0] as WTable;
 
-            //Applies "LightShading" built-in style to table
-
+            //Applica alla tabella lo stile built-in "LightShading"
             table.ApplyStyle(BuiltinTableStyle.LightShading);
 
-            //Saves and closes the document instance 
-
+            //Salva e chiudi l'istanza del documento 
             //Salva il documento su memory stream
             MemoryStream stream = new MemoryStream();
             await document.SaveAsync(stream, FormatType.Docx);
