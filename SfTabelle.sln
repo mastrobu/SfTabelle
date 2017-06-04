@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SfCreaTabellaDinamicaWord", "SfCreaTabellaDinamicaWord\SfCreaTabellaDinamicaWord\SfCreaTabellaDinamicaWord.csproj", "{1476AE6D-5052-42E4-AA6D-229F895E0B41}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SfStileTabellaWord", "SfStileTabellaWord\SfStileTabellaWord.csproj", "{E4B23508-E301-47D1-AB7B-C091B7DE87C0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SfFormattaTabellaWord2", "SfFormattaTabellaWord2\SfFormattaTabellaWord2.csproj", "{FB8BC255-3533-4019-828E-56629627A890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SfStileOpzioniTabellaWord", "SfStileOpzioniTabellaWord\SfStileOpzioniTabellaWord.csproj", "{B141E7A8-ED89-4C7B-90DD-84E5765856AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -133,6 +135,24 @@ Global
 		{FB8BC255-3533-4019-828E-56629627A890}.Release|x86.ActiveCfg = Release|x86
 		{FB8BC255-3533-4019-828E-56629627A890}.Release|x86.Build.0 = Release|x86
 		{FB8BC255-3533-4019-828E-56629627A890}.Release|x86.Deploy.0 = Release|x86
+		{B141E7A8-ED89-4C7B-90DD-84E5765856AC}.Debug|ARM.ActiveCfg = Debug|ARM
+		{B141E7A8-ED89-4C7B-90DD-84E5765856AC}.Debug|ARM.Build.0 = Debug|ARM
+		{B141E7A8-ED89-4C7B-90DD-84E5765856AC}.Debug|ARM.Deploy.0 = Debug|ARM
+		{B141E7A8-ED89-4C7B-90DD-84E5765856AC}.Debug|x64.ActiveCfg = Debug|x64
+		{B141E7A8-ED89-4C7B-90DD-84E5765856AC}.Debug|x64.Build.0 = Debug|x64
+		{B141E7A8-ED89-4C7B-90DD-84E5765856AC}.Debug|x64.Deploy.0 = Debug|x64
+		{B141E7A8-ED89-4C7B-90DD-84E5765856AC}.Debug|x86.ActiveCfg = Debug|x86
+		{B141E7A8-ED89-4C7B-90DD-84E5765856AC}.Debug|x86.Build.0 = Debug|x86
+		{B141E7A8-ED89-4C7B-90DD-84E5765856AC}.Debug|x86.Deploy.0 = Debug|x86
+		{B141E7A8-ED89-4C7B-90DD-84E5765856AC}.Release|ARM.ActiveCfg = Release|ARM
+		{B141E7A8-ED89-4C7B-90DD-84E5765856AC}.Release|ARM.Build.0 = Release|ARM
+		{B141E7A8-ED89-4C7B-90DD-84E5765856AC}.Release|ARM.Deploy.0 = Release|ARM
+		{B141E7A8-ED89-4C7B-90DD-84E5765856AC}.Release|x64.ActiveCfg = Release|x64
+		{B141E7A8-ED89-4C7B-90DD-84E5765856AC}.Release|x64.Build.0 = Release|x64
+		{B141E7A8-ED89-4C7B-90DD-84E5765856AC}.Release|x64.Deploy.0 = Release|x64
+		{B141E7A8-ED89-4C7B-90DD-84E5765856AC}.Release|x86.ActiveCfg = Release|x86
+		{B141E7A8-ED89-4C7B-90DD-84E5765856AC}.Release|x86.Build.0 = Release|x86
+		{B141E7A8-ED89-4C7B-90DD-84E5765856AC}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

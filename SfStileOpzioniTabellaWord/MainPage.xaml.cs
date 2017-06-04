@@ -20,48 +20,40 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace SfStileTabellaWord
+namespace SfStileOpzioniTabellaWord
 {
     /// <summary>
-    /// Un table style definisce un insieme di formattazioni a livello di tabelle, righe, 
-    /// celle e paragrafi che possono essere applicati ad una tabella. L'istanza WTableStyle 
-    /// rappresenta lo stile di ua tabella in un documento Word.
-    /// Nota:
-    ///     Essential DocIO attualmente fornisce supporto per table styles soltanto nei
-    ///     formati DOCX e WordML. DocIO può conservare i table styles sia quelli built-in 
-    ///     che quelli personalizzati quando si aprono e si salvano formati DOCX, WordML.
-    ///     Viene inoltre preservata la visualizzazione nelle conversioni da Word a PDF, 
-    ///     da Word a Image, e da Word a HTML.
-    /// Il codice di esempio che segue illustra come applicare i built-in table styles alla 
-    /// tabella.
+    /// Dopo che hai applicato uno stile alla tabella, puoi abilitare o disabilitare 
+    /// la speciale formattazione della tabella. Esistono sei opzioni: prima colonna, 
+    /// ultima colonna, banded rows, 
+    /// banded columns, header row and last row.
+    /// 
+    /// The following code example illustrates how to enable and disable the special table 
+    /// formatting options of the table styles
     /// </summary>
     public sealed partial class MainPage : Page
     {
         public MainPage()
         {
             this.InitializeComponent();
-            StileTabellaWordAsync();
+            StileOpzioniTabellaWordAsync();
         }
 
-        private async void StileTabellaWordAsync()
+        private async void StileOpzioniTabellaWordAsync()
         {
             //Crea una istanza della classe WordDocument
             WordDocument document = new WordDocument();
+            //Aggiunge una sezione ad un documento word
+            IWSection sectionFirst = document.AddSection();
+            //Aggiunge una tabella ad un documento word
+            IWTable tableFirst = sectionFirst.AddTable();
+            //Dimensiona la tabella
+            tableFirst.ResetCells(3, 2);
+            //Salva il documento su memory stream
+            MemoryStream stream = new MemoryStream();
+            await document.SaveAsync(stream, FormatType.Docx);
 
-            //Apre un documento word esistente nella istanza DocIO
-            //document.Open("Table.docx", FormatType.Docx);
-            StorageFolder local = Windows.Storage.ApplicationData.Current.LocalFolder;
-            StorageFile storageFile;
-            try
-            {
-                storageFile = await local.GetFileAsync("Table.docx");
-            }
-            catch (Exception)
-            {
-                return;
-            }
-            var streamFile = await storageFile.OpenStreamForReadAsync();
-            document.Open(streamFile, FormatType.Docx);
+            document.Open(stream, FormatType.Docx);
 
             WSection section = document.Sections[0];
 
@@ -70,18 +62,37 @@ namespace SfStileTabellaWord
             //Applica alla tabella lo stile built-in "LightShading"
             table.ApplyStyle(BuiltinTableStyle.LightShading);
 
-            //Salva e chiudi l'istanza del documento 
+            //Abilita una formattazione speciale per le banded columns della tabella 
+            table.ApplyStyleForBandedColumns = true;
+
+            //Abilita una formattazione speciale per le banded rows of the table
+            table.ApplyStyleForBandedRows = true;
+
+            //Disabilita la formattazione speciale per la prima colonna della tabella
+            table.ApplyStyleForFirstColumn = false;
+
+            //Abilita una formattazione speciale per la riga di testata della tabella
+            table.ApplyStyleForHeaderRow = true;
+
+            //Abilita una formattazione speciale per l'ultima colonna della tabella
+            table.ApplyStyleForLastColumn = true;
+
+            //Disabilita la formattazione speciale per l'ultima riga della tabella
+            table.ApplyStyleForLastRow = false;
+
+            //Salva e chiudi l'istanza del documento
             //Salva il documento su memory stream
-            MemoryStream stream = new MemoryStream();
-            await document.SaveAsync(stream, FormatType.Docx);
+            MemoryStream memoryStream = new MemoryStream();
+            await document.SaveAsync(memoryStream, FormatType.Docx);
 
             //Libera le risorse impegnate dall'istanza WordDocument
             document.Close();
 
             //Salva lo stream come file di documento Word nella macchina locale
-            StorageFile stFile = await Save(stream, "TableStyle.docx");
-
+            StorageFile stFile = await Save(memoryStream, "TableStyle.docx");
             DefaultLaunch("TableStyle.docx");
+
+
         }
 
         async void DefaultLaunch(string stFile)
@@ -173,3 +184,4 @@ namespace SfStileTabellaWord
         }
     }
 }
+
