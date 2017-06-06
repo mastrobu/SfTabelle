@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SfStileOpzioniTabellaWord",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SfMergeCellsOrizzTabellaWord", "SfMergeCellsOrizzTabellaWord\SfMergeCellsOrizzTabellaWord.csproj", "{3CC79003-F5DA-4B17-A718-43F4386D4B1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SfMergeCellsVertTabellaWord", "SfMergeCellsVertTabellaWord\SfMergeCellsVertTabellaWord.csproj", "{29BBD28F-447C-4E17-B6F9-28B430C89239}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -173,6 +175,24 @@ Global
 		{3CC79003-F5DA-4B17-A718-43F4386D4B1F}.Release|x86.ActiveCfg = Release|x86
 		{3CC79003-F5DA-4B17-A718-43F4386D4B1F}.Release|x86.Build.0 = Release|x86
 		{3CC79003-F5DA-4B17-A718-43F4386D4B1F}.Release|x86.Deploy.0 = Release|x86
+		{29BBD28F-447C-4E17-B6F9-28B430C89239}.Debug|ARM.ActiveCfg = Debug|ARM
+		{29BBD28F-447C-4E17-B6F9-28B430C89239}.Debug|ARM.Build.0 = Debug|ARM
+		{29BBD28F-447C-4E17-B6F9-28B430C89239}.Debug|ARM.Deploy.0 = Debug|ARM
+		{29BBD28F-447C-4E17-B6F9-28B430C89239}.Debug|x64.ActiveCfg = Debug|x64
+		{29BBD28F-447C-4E17-B6F9-28B430C89239}.Debug|x64.Build.0 = Debug|x64
+		{29BBD28F-447C-4E17-B6F9-28B430C89239}.Debug|x64.Deploy.0 = Debug|x64
+		{29BBD28F-447C-4E17-B6F9-28B430C89239}.Debug|x86.ActiveCfg = Debug|x86
+		{29BBD28F-447C-4E17-B6F9-28B430C89239}.Debug|x86.Build.0 = Debug|x86
+		{29BBD28F-447C-4E17-B6F9-28B430C89239}.Debug|x86.Deploy.0 = Debug|x86
+		{29BBD28F-447C-4E17-B6F9-28B430C89239}.Release|ARM.ActiveCfg = Release|ARM
+		{29BBD28F-447C-4E17-B6F9-28B430C89239}.Release|ARM.Build.0 = Release|ARM
+		{29BBD28F-447C-4E17-B6F9-28B430C89239}.Release|ARM.Deploy.0 = Release|ARM
+		{29BBD28F-447C-4E17-B6F9-28B430C89239}.Release|x64.ActiveCfg = Release|x64
+		{29BBD28F-447C-4E17-B6F9-28B430C89239}.Release|x64.Build.0 = Release|x64
+		{29BBD28F-447C-4E17-B6F9-28B430C89239}.Release|x64.Deploy.0 = Release|x64
+		{29BBD28F-447C-4E17-B6F9-28B430C89239}.Release|x86.ActiveCfg = Release|x86
+		{29BBD28F-447C-4E17-B6F9-28B430C89239}.Release|x86.Build.0 = Release|x86
+		{29BBD28F-447C-4E17-B6F9-28B430C89239}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
